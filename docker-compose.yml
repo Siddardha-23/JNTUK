@@ -1,0 +1,45 @@
+version: '3'
+services: 
+  backend:
+    build:
+      ./my-projeyt
+    container_name: backend
+    ports:
+      - "3000:3000"
+  frontend: 
+    build: 
+      context: ./my-projext
+    container_name: frontend
+    ports: 
+      - "80:80"
+# #   # nginx: 
+# #   #   container_name: nginx
+# #   #   depends_on: 
+# #   #     - ui
+# #   #     - api
+# #   #   ports: 
+# #   #     - "80:80"
+# #   #   build:
+# #   #     context: ./nginx
+
+# version: '3.7'
+
+# services:
+#   angular:
+#     build: ./my-projext
+#     container_name: angular
+#     restart: always
+#   server:
+#     build: ./my-projeyt
+#     container_name: server
+#     restart: always
+#   # nginx:
+#   #   image: nginx:alpine
+#   #   container_name: nginx
+#   #   ports:
+#   #     - '80:80'
+#   #   volumes:
+#   #     - ./nginx.conf:/etc/nginx/nginx.conf
+#   #   depends_on:
+#   #     - angular
+#   #     - server
